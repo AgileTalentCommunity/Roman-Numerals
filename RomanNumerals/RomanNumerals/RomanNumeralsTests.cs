@@ -72,6 +72,20 @@ namespace RomanNumerals
             string actual = RomanNumerals.Convert(9);
             Check.That(actual).IsEqualTo("IX");
         }
+
+        [Test]
+        public void Should_return_X_when_arabic_number_is_10()
+        {
+            string actual = RomanNumerals.Convert(10);
+            Check.That(actual).IsEqualTo("X");
+        }
+
+        [Test]
+        public void Should_return_L_when_arabic_number_is_50()
+        {
+            string actual = RomanNumerals.Convert(50);
+            Check.That(actual).IsEqualTo("L");
+        }
     }
 
     internal class RomanNumerals
@@ -86,6 +100,8 @@ namespace RomanNumerals
             if (arabicNumber == 7) return "VII";
             if (arabicNumber == 8) return "VIII";
             if (arabicNumber == 9) return "IX";
+            if (arabicNumber == 10) return "X";
+            if (arabicNumber == 50) return "L";
             return "I";
         }
     }
