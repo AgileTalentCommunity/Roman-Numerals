@@ -30,6 +30,13 @@ namespace RomanNumerals
             string actual = RomanNumerals.Convert(3);
             Check.That(actual).IsEqualTo("III");
         }
+
+        [Test]
+        public void Should_return_IV_when_arabic_number_is_4()
+        {
+            string actual = RomanNumerals.Convert(4);
+            Check.That(actual).IsEqualTo("IV");
+        }
     }
 
     internal class RomanNumerals
@@ -38,6 +45,7 @@ namespace RomanNumerals
         {
             if (arabicNumber == 2) return "II";
             if (arabicNumber == 3) return "III";
+            if (arabicNumber == 4) return "IV";
             return "I";
         }
     }
