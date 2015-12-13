@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,27 +105,6 @@ namespace RomanNumerals
         {
             string actual = RomanNumerals.Convert(1000);
             Check.That(actual).IsEqualTo("M");
-        }
-    }
-
-    internal class RomanNumerals
-    {
-        public static string Convert(int arabicNumber)
-        {
-            if (arabicNumber == 2) return "II";
-            if (arabicNumber == 3) return "III";
-            if (arabicNumber == 4) return "IV";
-            if (arabicNumber == 5) return "V";
-            if (arabicNumber == 6) return "VI";
-            if (arabicNumber == 7) return "VII";
-            if (arabicNumber == 8) return "VIII";
-            if (arabicNumber == 9) return "IX";
-            if (arabicNumber == 10) return "X";
-            if (arabicNumber == 50) return "L";
-            if (arabicNumber == 100) return "C";
-            if (arabicNumber == 500) return "D";
-            if (arabicNumber == 1000) return "M";
-            return "I";
         }
     }
 }
