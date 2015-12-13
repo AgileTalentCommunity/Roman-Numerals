@@ -24,6 +24,12 @@ namespace RomanNumerals
         [TestCase(100, "C")]
         [TestCase(500, "D")]
         [TestCase(1000, "M")]
+        [TestCase(900, "CM")]
+        [TestCase(400, "CD")]
+        [TestCase(90, "XC")]
+        [TestCase(40, "XL")]
+        [TestCase(1990, "MCMXC")]
+        [TestCase(2008, "MMVIII")]
         public void Should_return_roman_number_for_the_arabic_number(int arabicNumber, string expectedRomanNumber)
         {
             string actual = RomanNumerals.Convert(arabicNumber);
