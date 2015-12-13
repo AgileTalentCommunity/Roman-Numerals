@@ -6,10 +6,12 @@ namespace RomanNumerals
 {
     internal class RomanNumerals
     {
-        private static readonly Dictionary<int, string> romanNumbers = new Dictionary<int, string>
+        private static readonly Dictionary<int, string> knownRomanSymbols = new Dictionary<int, string>
         {
             {1, "I"},
+            {4, "IV"},
             {5, "V"},
+            {9, "IX"},
             {10, "X"},
             {50, "L"},
             {100, "C"},
@@ -18,14 +20,12 @@ namespace RomanNumerals
         };
 
         public static string Convert(int arabicNumber)
-        {
-            if (arabicNumber == 4) return "IV";
-            if (arabicNumber == 9) return "IX";
+        {            
             var romanNumberBuilder = new StringBuilder();
             while (arabicNumber > 0)
             {
-                var maxMinorValue = romanNumbers.Keys.Where(k => k <= arabicNumber).Max();
-                romanNumberBuilder.Append(romanNumbers[maxMinorValue]);
+                var maxMinorValue = knownRomanSymbols.Keys.Where(k => k <= arabicNumber).Max();
+                romanNumberBuilder.Append(knownRomanSymbols[maxMinorValue]);
                 arabicNumber -= maxMinorValue;
 
             }
