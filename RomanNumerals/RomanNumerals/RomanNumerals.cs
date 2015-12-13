@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,9 @@ namespace RomanNumerals
         };
 
         public static string Convert(int arabicNumber)
-        {            
+        {
+            if (arabicNumber > 3000) throw new ArgumentOutOfRangeException(nameof(arabicNumber));
+
             var romanNumberBuilder = new StringBuilder();
             while (arabicNumber > 0)
             {

@@ -35,5 +35,14 @@ namespace RomanNumerals
             string actual = RomanNumerals.Convert(arabicNumber);
             Check.That(actual).IsEqualTo(expectedRomanNumber);
         }
+
+        [Test]
+        public void Should_throw_an_exception_when_arabic_number_is_larger_than_3000()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            {
+                RomanNumerals.Convert(3001);
+            });
+        }
     }
 }
