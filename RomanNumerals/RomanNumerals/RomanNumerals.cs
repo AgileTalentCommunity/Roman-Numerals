@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RomanNumerals
@@ -30,8 +31,19 @@ namespace RomanNumerals
                 }
                 return romanNumberBuilder.ToString();                
             }            
-            if (arabicNumber == 4) return "IV";            
-            if (arabicNumber == 6) return "VI";
+            if (arabicNumber == 4) return "IV";
+            if (arabicNumber == 6)
+            {
+                var romanNumberBuilder = new StringBuilder();
+                while (arabicNumber > 0)
+                {
+                    var maxMinorValue = romanNumbers.Keys.Where(k => k <= arabicNumber).Max();
+                    romanNumberBuilder.Append(romanNumbers[maxMinorValue]);
+                    arabicNumber -= maxMinorValue;
+
+                }
+                return romanNumberBuilder.ToString();
+            }
             if (arabicNumber == 7) return "VII";
             if (arabicNumber == 8) return "VIII";
             if (arabicNumber == 9) return "IX";
