@@ -44,6 +44,13 @@ namespace RomanNumerals
             string actual = RomanNumerals.Convert(5);
             Check.That(actual).IsEqualTo("V");
         }
+
+        [Test]
+        public void Should_return_VI_when_arabic_number_is_6()
+        {
+            string actual = RomanNumerals.Convert(6);
+            Check.That(actual).IsEqualTo("VI");
+        }
     }
 
     internal class RomanNumerals
@@ -54,6 +61,7 @@ namespace RomanNumerals
             if (arabicNumber == 3) return "III";
             if (arabicNumber == 4) return "IV";
             if (arabicNumber == 5) return "V";
+            if (arabicNumber == 6) return "VI";
             return "I";
         }
     }
