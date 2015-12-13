@@ -16,12 +16,19 @@ namespace RomanNumerals
             string actual = RomanNumerals.Convert(1);
             Check.That(actual).IsEqualTo("I");
         }
+        [Test]
+        public void Should_return_II_when_arabic_number_is_2()
+        {
+            string actual = RomanNumerals.Convert(2);
+            Check.That(actual).IsEqualTo("II");
+        }
     }
 
     internal class RomanNumerals
     {
-        public static string Convert(int i)
+        public static string Convert(int arabicNumber)
         {
+            if (arabicNumber == 2) return "II";
             return "I";
         }
     }
