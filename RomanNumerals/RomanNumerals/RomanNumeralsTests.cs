@@ -100,6 +100,13 @@ namespace RomanNumerals
             string actual = RomanNumerals.Convert(500);
             Check.That(actual).IsEqualTo("D");
         }
+
+        [Test]
+        public void Should_return_M_when_arabic_number_is_1000()
+        {
+            string actual = RomanNumerals.Convert(1000);
+            Check.That(actual).IsEqualTo("M");
+        }
     }
 
     internal class RomanNumerals
@@ -118,6 +125,7 @@ namespace RomanNumerals
             if (arabicNumber == 50) return "L";
             if (arabicNumber == 100) return "C";
             if (arabicNumber == 500) return "D";
+            if (arabicNumber == 1000) return "M";
             return "I";
         }
     }
